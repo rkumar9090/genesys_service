@@ -1,10 +1,14 @@
 package com.example.genesys.genesysservices.dto;
 
+import java.io.Serializable;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-public class UserDto {
+public class UserDto implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private int id;
 
