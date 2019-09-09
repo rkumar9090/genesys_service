@@ -9,7 +9,7 @@ public class UserNotFound extends RuntimeException {
 	private static final long serialVersionUID = 5150598546718294951L;
 
 	public UserNotFound() {
-		super("Request User is not found");
+		super("Requested User is not found");
 	}
 
 }

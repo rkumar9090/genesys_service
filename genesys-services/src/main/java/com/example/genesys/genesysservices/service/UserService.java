@@ -53,8 +53,9 @@ public class UserService {
 	public void update(UserDto userDto) {
 		User userValue = userDao.findOne(userDto.getId());
 		if (userValue != null) {
+			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 			userValue.setUserName(userDto.getName());
-			userValue.setPassword(userDto.getPassword());
+			userValue.setPassword(encoder.encode(userDto.getPassword()));
 			userValue.setEmail(userDto.getEmail());
 			userDao.save(userValue);
 		} else {
